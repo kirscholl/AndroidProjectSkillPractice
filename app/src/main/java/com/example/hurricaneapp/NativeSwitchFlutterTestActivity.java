@@ -18,10 +18,12 @@ public class NativeSwitchFlutterTestActivity extends AppCompatActivity {
 
         Button nativeFlutterSwitch = findViewById(R.id.nativeFlutterSwitchButton);
 
-//        String flutterRoute = "/HomeFlutterPage";
-        String flutterRoute = "FlutterLoginPage";
+        String flutterHomeRoute = "/HomeFlutterPage";
+        String flutterLoginRoute = "/FlutterLoginPage";
+        String flutterBatteryRoute = "/BatterPage";
 
-        flutterEngineHelper.initFlutterEngine(NativeSwitchFlutterTestActivity.this, flutterRoute);
+        //初始化Flutter引擎,路由页面不能为null???
+        flutterEngineHelper.initFlutterEngine(NativeSwitchFlutterTestActivity.this, flutterBatteryRoute);
 
         nativeFlutterSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +40,7 @@ public class NativeSwitchFlutterTestActivity extends AppCompatActivity {
                 //
 
                 //创建新的flutterEngine并跳转到指定路由的Flutter页面
-                //todo 打开Flutter页面时,白屏,在主线程中执行了太多任务
+                //打开Flutter页面时,白屏,在主线程中执行了太多任务,使用缓存引擎的方案
 //                startActivity(FlutterActivity
 //                                        .withNewEngine()
 //                                        .initialRoute("/HomeFlutterPage")
@@ -46,6 +48,8 @@ public class NativeSwitchFlutterTestActivity extends AppCompatActivity {
 
 
                 //todo flutter引擎的学习 http://gityuan.com/2019/06/22/flutter_booting/
+
+                //在创建原生页面的时候缓存一个Flutter引擎,再使用进行跳转
                 startActivity(FlutterActivity.
                         withCachedEngine("engine_id").
                         build(NativeSwitchFlutterTestActivity.this));

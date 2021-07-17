@@ -72,14 +72,14 @@ Widget _byPhoneField() {
   );
 }
 
-class KirLoginTabBar extends StatefulWidget {
+class HurricaneLoginTabBar extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return KirLoginTabBarState();
+    return HurricaneLoginTabBarState();
   }
 }
 
-class KirLoginTabBarState extends State<KirLoginTabBar> with SingleTickerProviderStateMixin {
+class HurricaneLoginTabBarState extends State<HurricaneLoginTabBar> with SingleTickerProviderStateMixin {
   TabController _tabController;
 
   @override

@@ -1,14 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_module/FlutterModuleTools/channels_helper.dart';
 import 'package:flutter_module/FlutterWidget/login_tab_bar.dart';
 
-//todo 实现通用登陆界面
-
-class KirLoginPage extends StatelessWidget {
-  final loginTitle = "Login Kir";
+class HurricaneLoginPage extends StatelessWidget {
+  final loginTitle = "Login Hurricane";
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +20,7 @@ class KirLoginPage extends StatelessWidget {
               _languageSelection(),
               _loginTitle(loginTitle),
               _loginWarningText(),
-              KirLoginTabBar(),
+              HurricaneLoginTabBar(),
               _toNextButton(context),
               _registrationPrompt()
             ]),
@@ -106,16 +102,7 @@ class KirLoginPage extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 17),
         ),
         onPressed: () async {
-          //todo 跳回到Native页面
-
-          String resultString;
-          try {
-            resultString = await PluginManager.pushFirstActivity({'key': 'value'});
-          } on PlatformException {
-            resultString = '失败';
-          }
-          print(resultString);
-
+          //todo 跳转到原生主界面
         },
       ),
     );
