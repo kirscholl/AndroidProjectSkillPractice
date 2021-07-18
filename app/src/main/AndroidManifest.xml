@@ -11,7 +11,7 @@
         android:theme="@style/Theme.HurricaneApp">
 
         <activity
-            android:name=".MaterialDesignActivity">
+            android:name=".MaterialDesignPracticeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
