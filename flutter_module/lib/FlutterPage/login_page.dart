@@ -14,17 +14,18 @@ class HurricaneLoginPage extends StatelessWidget {
         FocusScope.of(context).requestFocus(FocusNode());
       },
       child: Scaffold(
-          body: Padding(
-            padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              _languageSelection(),
-              _loginTitle(loginTitle),
-              _loginWarningText(),
-              HurricaneLoginTabBar(),
-              _toNextButton(context),
-              _registrationPrompt()
-            ]),
-          )),
+        body: Padding(
+          padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            _languageSelection(),
+            _loginTitle(loginTitle),
+            _loginWarningText(),
+            HurricaneLoginTabBar(),
+            _toNextButton(context),
+            _registrationPrompt()
+          ]),
+        )
+      ),
     );
   }
 

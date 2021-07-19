@@ -10,13 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HurricaneApp">
 
-        <activity
-            android:name=".MaterialDesignPracticeActivity">
+        <activity android:name=".MaterialDesignPractice.CollapsingToolBarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".MaterialDesignPractice.MaterialDesignPracticeActivity">
         </activity>
 
         <activity
@@ -30,7 +31,6 @@
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
         </activity>
-
     </application>
 
 </manifest>

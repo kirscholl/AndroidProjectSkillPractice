@@ -26,6 +26,15 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    sourceSets{
+        main{
+            res.srcDirs = [
+                    'src/main/res',
+                    'src/main/res/layout/material_design_practice'
+            ]
+        }
+    }
 }
 
 dependencies {
@@ -39,6 +48,11 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     //引入开源项目CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.0.1'
+    //RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    //Glide库,图片加载库
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
 
     testImplementation 'junit:junit:4.+'
