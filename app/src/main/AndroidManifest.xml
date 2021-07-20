@@ -9,28 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HurricaneApp">
-
-        <activity android:name=".MaterialDesignPractice.CollapsingToolBarActivity">
+        <activity android:name=".MaterialDesignPractice.TabBarLayoutActivity"></activity>
+        <activity android:name=".MaterialDesignPractice.LoginPageActivity" />
+        <activity
+            android:name=".MaterialDesignPractice.CollapsingToolBarActivity"
+            android:theme="@style/CollapsingToolbarActivityTheme" />
+        <activity android:name=".MaterialDesignPractice.MaterialDesignPracticeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MaterialDesignPractice.MaterialDesignPracticeActivity">
-        </activity>
-
         <activity
             android:name=".NativeSwitchFlutterTestActivity"
-            android:label="NativeFlutterSwitch">
-        </activity>
-
+            android:label="NativeFlutterSwitch" />
         <activity
             android:name="io.flutter.embedding.android.FlutterActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

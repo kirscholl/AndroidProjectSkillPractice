@@ -8,6 +8,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -168,7 +170,9 @@ public class MaterialDesignPracticeActivity extends AppCompatActivity {
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
             case R.id.backup:
-                Toast.makeText(this, "Clicked Backup", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MaterialDesignPracticeActivity.this,
+                        LoginPageActivity.class);
+                startLoginPageActivity(intent);
                 break;
             case R.id.delete:
                 Toast.makeText(this, "Clicked Delete", Toast.LENGTH_SHORT).show();
@@ -179,5 +183,9 @@ public class MaterialDesignPracticeActivity extends AppCompatActivity {
             default:
         }
         return true;
+    }
+
+    private void startLoginPageActivity(Intent intent){
+        startActivity(intent);
     }
 }

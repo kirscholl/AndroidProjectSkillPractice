@@ -1,6 +1,7 @@
 package com.example.hurricaneapp.MaterialDesignPractice;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
-import com.example.hurricaneapp.MaterialDesignPractice.Fruit;
 import com.example.hurricaneapp.R;
 import java.util.List;
 
@@ -32,8 +32,8 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
         public ViewHolder(@NonNull View View) {
             super(View);
             cardView = (CardView) itemView;
-            fruitImage = (ImageView) itemView.findViewById(R.id.fruit_image);
-            fruitName = (TextView) itemView.findViewById(R.id.fruit_name);
+            fruitImage = itemView.findViewById(R.id.fruit_image);
+            fruitName = itemView.findViewById(R.id.fruit_name);
 
         }
     }
@@ -46,7 +46,23 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
         }
 
         View view = LayoutInflater.from(mContext).inflate(R.layout.recycler_fruit_item_view, parent, false);
-        return new ViewHolder(view);
+        final  ViewHolder holder = new ViewHolder(view);
+
+        //为cardView设置点击事件
+        holder.cardView.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                int position = holder.getAdapterPosition();
+                Fruit fruit = mFruitList.get(position);
+                Intent intent = new Intent(mContext, CollapsingToolBarActivity.class);
+                intent.putExtra(CollapsingToolBarActivity.FruitName, fruit.getName());
+                intent.putExtra(CollapsingToolBarActivity.FruitImageId, fruit.getImageId());
+                mContext.startActivity(intent);
+            }
+        });
+
+        return holder;
     }
 
     @Override
